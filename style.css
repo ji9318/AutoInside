@@ -56,6 +56,10 @@ address {
   font-style: normal;
 }
 
+.lg-only {
+  display: none;
+}
+
 /* Global */
 :root {
   /* color */
@@ -73,4 +77,161 @@ address {
   --font-regular: 18px;
   --font-small: 16px;
   --font-micro: 14px;
+}
+
+/* Header */
+.global-header {
+  position: relative;
+  display: flex;
+  padding: 20px 0;
+}
+
+.logo {
+  margin: 0 auto;
+}
+
+.logo img {
+  width: 120px;
+}
+
+.gnb-nav-list {
+  display: flex;
+  position: relative;
+}
+
+.gnb-nav-item {
+  height: 60px;
+  padding: 0 30px;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.gnb-nav-item > a {
+  line-height: 60px;
+}
+
+.gnb-nav-item:hover > a {
+  color: var(--color-main);
+}
+
+.gnb-nav-item:hover .gnb-nav-depth {
+  display: flex;
+}
+
+.gnb-nav-depth {
+  position: absolute;
+  display: none;
+  padding: 0 10px;
+  background-color: var(--color-main);
+  border-radius: 20px;
+}
+
+.gnb-nav-depth.is-05 {
+  right: 0;
+}
+
+.gnb-nav-depth-item {
+  flex-shrink: 0;
+  padding: 16px;
+}
+
+.gnb-nav-depth-item a {
+  color: #bdd2ff;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.gnb-nav-depth-item a:hover {
+  color: var(--color-white);
+  font-weight: 400;
+}
+
+.header-button-group {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+
+.header-button-group a {
+  position: relative;
+  font-size: 13px;
+  color: #666c74;
+  font-weight: 600;
+  margin-right: 18px;
+}
+
+.header-button-group a:hover {
+  color: var(--color-main);
+}
+
+.header-button-group a:hover::after {
+  display: inline-block;
+  position: absolute;
+  font-size: 10px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  content: "●";
+  color: var(--color-main);
+}
+
+.header-button-group button {
+  width: 60px;
+  height: 60px;
+}
+
+.header-button-group button i {
+  font-size: 24px;
+}
+
+/* tablet */
+@media screen and (min-width: 768px) {
+  .sm-only {
+    display: none;
+  }
+
+  .global-header {
+    padding: 30px 0;
+  }
+
+  .logo img {
+    width: 160px;
+  }
+
+  .header-button-group {
+    right: 26px;
+  }
+
+  .header-button-group button i {
+    margin-top: 2px;
+    font-size: 32px;
+    color: var(--color-black);
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 1200px) {
+  .lg-only {
+    display: block;
+  }
+
+  .global-header {
+    padding-left: 60px;
+    padding-right: 60px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  .logo {
+    margin: 0;
+  }
+
+  .header-button-group {
+    position: static;
+    display: flex;
+    align-items: center;
+    transform: none;
+  }
 }

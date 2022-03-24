@@ -12,10 +12,7 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
-      integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
     <link rel="stylesheet" href="./style.css" />
   </head>
@@ -28,11 +25,37 @@
       </h1>
       <nav class="lg-only">
         <ul class="gnb-nav-list">
-          <li class="gnb-nav-item"><a href="/">내차사기</a></li>
-          <li class="gnb-nav-item"><a href="/">내차팔기</a></li>
-          <li class="gnb-nav-item"><a href="/">고객후기</a></li>
-          <li class="gnb-nav-item"><a href="/">아카이브</a></li>
-          <li class="gnb-nav-item"><a href="/">고객지원</a></li>
+          <li class="gnb-nav-item">
+            <a href="/">내차사기</a>
+            <ul class="gnb-nav-depth">
+              <li class="gnb-nav-depth-item"><a href="/">내차검색</a></li>
+              <li class="gnb-nav-depth-item"><a href="/">보증서비스</a></li>
+            </ul>
+          </li>
+          <li class="gnb-nav-item">
+            <a href="/">내차팔기</a>
+            <ul class="gnb-nav-depth">
+              <li class="gnb-nav-depth-item"><a href="/">간편신청</a></li>
+              <li class="gnb-nav-depth-item"><a href="/">나의 신청현황</a></li>
+              <li class="gnb-nav-depth-item"><a href="/">최고경쟁차량</a></li>
+            </ul>
+          </li>
+          <li class="gnb-nav-item">
+            <a href="/">고객후기</a>
+          </li>
+          <li class="gnb-nav-item">
+            <a href="/">아카이브</a>
+          </li>
+          <li class="gnb-nav-item">
+            <a href="/">고객지원</a>
+            <ul class="gnb-nav-depth is-05">
+              <li class="gnb-nav-depth-item"><a href="/">공지사항</a></li>
+              <li class="gnb-nav-depth-item"><a href="/">FAQ</a></li>
+              <li class="gnb-nav-depth-item"><a href="/">1:1문의</a></li>
+              <li class="gnb-nav-depth-item"><a href="/">낙찰시세</a></li>
+              <li class="gnb-nav-depth-item"><a href="/">자료실</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <div class="header-button-group">
@@ -41,7 +64,7 @@
           <a href="/">LOGIN</a>
         </div>
         <button type="button" aria-label="메뉴 열기 버튼">
-          <i class="fa-solid fa-bars"></i>
+          <i class="xi-bars"></i>
         </button>
       </div>
     </header>
