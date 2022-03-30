@@ -56,10 +56,6 @@ address {
   font-style: normal;
 }
 
-.lg-only {
-  display: none;
-}
-
 /* Global */
 :root {
   /* color */
@@ -72,11 +68,31 @@ address {
   --color-light-blue: #3a76ff;
 
   /* font size */
-  --font-large: 48px;
-  --font-medium: 24px;
-  --font-regular: 18px;
-  --font-small: 16px;
-  --font-micro: 14px;
+  --font-large: 1.75rem;
+  --font-medium: 1.25rem;
+  --font-regular: 0.888rem;
+  --font-small: 0.813rem;
+  --font-micro: 0.75rem;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.lg-only {
+  display: none;
+}
+
+.container {
+  margin: 0 20px;
 }
 
 /* Header */
@@ -102,7 +118,7 @@ address {
 .gnb-nav-item {
   height: 60px;
   padding: 0 30px;
-  font-size: 19px;
+  font-size: 1.188rem;
   font-weight: 600;
 }
 
@@ -138,7 +154,7 @@ address {
 .gnb-nav-depth-item a {
   color: #bdd2ff;
   font-weight: 300;
-  font-size: 18px;
+  font-size: var(--font-regular);
 }
 
 .gnb-nav-depth-item a:hover {
@@ -155,7 +171,7 @@ address {
 
 .header-button-group a {
   position: relative;
-  font-size: 13px;
+  font-size: 0.813rem;
   color: #666c74;
   font-weight: 600;
   margin-right: 18px;
@@ -185,10 +201,301 @@ address {
   font-size: 24px;
 }
 
-/* tablet */
-@media screen and (min-width: 768px) {
+/* Main */
+/* mainVisual */
+.main-visual {
+  padding-bottom: 16vw;
+}
+
+.main-title {
+  margin: 30px 0;
+  font-size: var(--font-large);
+  font-weight: 600;
+}
+
+.main-title::after {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 12px;
+  left: 4px;
+  width: 36px;
+  height: 36px;
+  background: url("./assets/img_main_tit_pc.png") no-repeat;
+  background-size: contain;
+}
+
+.search-box {
+  max-width: 552px;
+  border-radius: 4.266vw;
+  background-color: var(--color-white);
+  box-shadow: 5px 5px 10px -2px rgb(0 0 0 / 27%);
+  overflow: hidden;
+  margin-bottom: 5vw;
+}
+
+.tab-group {
+  display: flex;
+  background-color: #ecf2ff;
+}
+
+.tab-button {
+  width: 50%;
+  font-size: var(--font-regular);
+  height: 12.5vw;
+  max-height: 70px;
+  color: rgba(34, 34, 34, 0.8);
+  background-color: #ecf2ff;
+}
+
+.is-tab {
+  color: var(--color-primary);
+  font-weight: 600;
+  background-color: var(--color-white);
+  border-top-right-radius: 4.266vw;
+  border-top-left-radius: 4.266vw;
+}
+
+.find-box,
+.sell-box {
+  display: none;
+  padding: 11.875vw 8.125vw 6.25vw;
+}
+
+.is-active {
+  display: block;
+}
+
+.find-title {
+  font-size: 5.313vw;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 11.875vw;
+}
+
+.find-title::before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  left: -10px;
+  width: 5vw;
+  height: 5vw;
+  background: url("./assets/img_main_box01_mo.png") no-repeat;
+  background-size: contain;
+}
+
+.select-group {
+  display: flex;
+  margin-bottom: 5.625vw;
+}
+
+.form-select {
+  position: relative;
+  width: 50%;
+  height: 10.625vw;
+  max-height: 60px;
+  background-color: #f5f5f5;
+  border-radius: 1.6vw;
+}
+
+.form-select:first-child {
+  margin-right: 20px;
+}
+
+.form-select select {
+  width: 100%;
+  height: 100%;
+  padding-left: 16px;
+  padding-right: 20px;
+  color: var(--color-tertiary);
+  font-size: var(--font-regular);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.form-select i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 8px;
+  color: #c4c8cd;
+  pointer-events: none;
+}
+
+.find-button {
+  width: 100%;
+  height: 12.5vw;
+  max-height: 80px;
+  color: var(--color-white);
+  background-color: var(--color-main);
+  border-radius: 1.6vw;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.link-box {
+  position: relative;
+  height: 42.5vw;
+  padding: 6.25vw 0 0 6.875vw;
+  border-radius: 4.266vw;
+}
+
+.link-box a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.link-box span {
+  display: inline-block;
+  font-size: 2.933vw;
+  padding: 1.2vw 3.2vw;
+  border-radius: 2.8vw;
+  margin-bottom: 3vw;
+}
+
+.link-box h3 {
+  font-size: 3.933vw;
+  line-height: 6.25vw;
+  margin-bottom: 2vw;
+  font-weight: 600;
+}
+
+.link-box p {
+  font-size: 3.2vw;
+}
+
+.sell-mycar-group {
+  display: flex;
+}
+
+.link-box.buy-mycar {
+  background-color: #d9dde2;
+  margin-bottom: 5vw;
+}
+.link-box.sell-mycar-01 {
+  width: 50%;
+  margin-right: 4.8vw;
+  background-color: #ecf2ff;
+}
+.link-box.sell-mycar-02 {
+  width: 50%;
+  color: var(--color-white);
+  background-color: var(--color-light-blue);
+}
+
+.link-box.buy-mycar span {
+  background-color: var(--color-white);
+  color: var(--color-tertiary);
+}
+.link-box.sell-mycar-01 span {
+  background-color: var(--color-white);
+  color: var(--color-tertiary);
+}
+.link-box.sell-mycar-02 span {
+  background-color: #3164d9;
+  color: var(--color-white);
+}
+
+.link-box .image-container {
+  position: absolute;
+}
+
+.buy-mycar .image-container {
+  width: 28.125vw;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 4vw;
+}
+
+.sell-mycar-group .link-box .image-container {
+  width: 10.625vw;
+  right: 4vw;
+  bottom: 4vw;
+}
+
+.link-box .image-container img {
+  width: 100%;
+}
+
+/* Event */
+.event {
+  position: relative;
+  background-color: #ecf2ff;
+}
+
+.event-item {
+  height: 24vw;
+}
+
+.event-item a {
+  display: block;
+  height: 100%;
+}
+
+.event-item h3 {
+  font-size: 3.46667vw;
+  line-height: 5.06667vw;
+  font-weight: 600;
+  padding-top: 4vw;
+  margin-bottom: 0.66667vw;
+}
+
+.event-item p {
+  font-size: 2.66667vw;
+}
+
+.event-item a img {
+  position: absolute;
+  right: 0.8vw;
+  width: 50.4vw;
+}
+
+.event-item.event01 img {
+  bottom: -4.93333vw;
+}
+
+.event-item.event02 img {
+  bottom: -2vw;
+}
+
+.event .tns-nav {
+  position: absolute;
+  bottom: 2vw;
+}
+
+.event .tns-nav button {
+  width: 1.6vw;
+  height: 1.6vw;
+  margin-right: 1.6vw;
+  background-color: #c4c8cd;
+  border-radius: 50%;
+}
+
+.event .tns-nav button.tns-nav-active {
+  background-color: #666c74;
+}
+
+/*------------ tablet ------------*/
+
+@media screen and (min-width: 750px) {
+  :root {
+    /* font size */
+    --font-large: 3rem;
+    --font-medium: 1.5rem;
+    --font-regular: 1.125rem;
+    --font-small: 1rem;
+    --font-micro: 0.875rem;
+  }
+
   .sm-only {
     display: none;
+  }
+
+  .event-item h3 br {
+    display: none !important;
   }
 
   .global-header {
@@ -208,12 +515,177 @@ address {
     font-size: 32px;
     color: var(--color-black);
   }
+
+  /* mainVisual */
+  .main-visual {
+    padding-bottom: 112px;
+  }
+
+  .main-title::after {
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: 16px;
+    left: 4px;
+    width: 56px;
+    height: 56px;
+    background: url("./assets/img_main_tit_pc.png") no-repeat;
+    background-size: contain;
+  }
+
+  .search-box {
+    border-radius: 20px;
+  }
+
+  .tab-button {
+    height: 70px;
+  }
+
+  .is-tab {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+
+  .find-box,
+  .sell-box {
+    padding: 90px 50px 60px;
+  }
+
+  .find-title {
+    font-size: 2.125rem;
+    margin-bottom: 75px;
+  }
+
+  .find-title::before {
+    top: 4px;
+    left: -12px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .select-group {
+    margin-bottom: 30px;
+  }
+
+  .form-select {
+    height: 60px;
+    border-radius: 12px;
+  }
+
+  .form-select select {
+    padding-left: 28px;
+    padding-right: 32px;
+  }
+
+  .form-select i {
+    right: 20px;
+    font-size: 20px;
+  }
+
+  .find-button {
+    font-size: 1.25rem;
+  }
+
+  .link-group {
+    width: 552px;
+  }
+
+  .link-box {
+    height: 230px;
+    padding: 30px 40px;
+    border-radius: 20px;
+  }
+
+  .link-box span {
+    height: 30px;
+    line-height: 30px;
+    font-size: 0.938rem;
+    padding: 0 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+  }
+
+  .link-box h3 {
+    font-size: 1.375rem;
+    line-height: 2.125rem;
+    margin-bottom: 15px;
+  }
+
+  .link-box p {
+    font-size: var(--font-regular);
+  }
+
+  .link-box.buy-mycar {
+    margin-bottom: 36px;
+  }
+  .link-box.sell-mycar-01 {
+    margin-right: 36px;
+  }
+
+  .buy-mycar .image-container {
+    width: auto;
+    right: 30px;
+  }
+
+  .sell-mycar-group .link-box .image-container {
+    width: auto;
+    right: 22px;
+    bottom: 22px;
+  }
+
+  /* Event */
+  .event-item {
+    height: 128px;
+  }
+
+  .event-item h3 {
+    font-size: var(--font-medium);
+    line-height: 1;
+    padding-top: 42px;
+    margin-bottom: 15px;
+  }
+
+  .event-item p {
+    font-size: var(--font-small);
+  }
+
+  .event-item a img {
+    width: auto;
+    right: 50px;
+  }
+
+  .event-item.event01 img {
+    top: -34px;
+  }
+
+  .event-item.event02 img {
+    top: -10px;
+  }
+
+  .event .tns-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+  }
+
+  .event .tns-nav button {
+    width: 10px;
+    height: 10px;
+    margin-right: 8px;
+  }
 }
 
-/* desktop */
+/*------------ desktop ------------*/
 @media screen and (min-width: 1200px) {
   .lg-only {
     display: block;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
   }
 
   .global-header {
@@ -233,5 +705,20 @@ address {
     display: flex;
     align-items: center;
     transform: none;
+  }
+
+  /* mainVisual */
+
+  .main-title {
+    margin: 94px 0 56px;
+  }
+
+  .main-group {
+    display: flex;
+  }
+
+  .search-box {
+    width: 552px;
+    margin-right: 36px;
   }
 }
