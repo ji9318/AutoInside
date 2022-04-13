@@ -87,6 +87,10 @@ address {
   border: 0 !important;
 }
 
+.sm-hidden {
+  display: none;
+}
+
 .lg-only {
   display: none;
 }
@@ -319,7 +323,8 @@ address {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 8px;
+  right: 16px;
+  font-size: 10px;
   color: #c4c8cd;
   pointer-events: none;
 }
@@ -478,6 +483,207 @@ address {
   background-color: #666c74;
 }
 
+/* Trust */
+.trust {
+  color: var(--color-white);
+  padding: 16.875vw 0 26.666vw;
+  background: linear-gradient(145deg, #00b3f1, #004eff, #9560a8);
+  background-size: 400% 400%;
+  -webkit-animation: TrustBackground 6s alternate ease infinite;
+  -moz-animation: TrustBackground 6s alternate ease infinite;
+  -o-animation: TrustBackground 6s alternate ease infinite;
+  animation: TrustBackground 6s alternate ease infinite;
+}
+
+@-webkit-keyframes TrustBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+@-moz-keyframes TrustBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+@-o-keyframes TrustBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+@keyframes TrustBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.trust .title-group {
+  position: relative;
+}
+
+.section-title {
+  font-size: 8vw;
+  font-weight: 600;
+  margin-bottom: 3.333vw;
+}
+
+.section-sub {
+  font-size: 3.46667vw;
+}
+
+.section-title::after {
+  content: "";
+  display: inline-block;
+  position: relative;
+  left: 6px;
+  width: 2.133vw;
+  height: 2.133vw;
+  background-color: var(--color-main);
+  border-radius: 50%;
+}
+
+.trust .section-title::after {
+  background-color: #ff6d6a;
+}
+
+.trust-more {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  width: 8vw;
+  height: 8vw;
+  opacity: 0.6;
+}
+
+.trust-more i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4.93333vw;
+}
+
+.trust-list {
+  display: flex;
+  margin-top: 19.333vw;
+}
+
+.trust-item {
+  width: 33.33333%;
+}
+
+.trust-item .image-container {
+  margin-bottom: 8vw;
+}
+
+.trust-item .image-container img {
+  display: block;
+  margin: 0 auto;
+  width: 16.667vw;
+}
+
+.trust-item h3 {
+  font-size: 4vw;
+  line-height: 6.13333vw;
+  text-align: center;
+}
+
+/* Review */
+.review {
+  padding: 21.25vw 0 19.375vw;
+  background-color: #f2f6ff;
+}
+
+.review .section-sub {
+  color: var(--color-tertiary);
+}
+
+.review-list {
+  padding: 7.6vw 0;
+}
+
+.review-item {
+  height: 56.933vw;
+  padding: 8vw 6.66667vw;
+  border-radius: 2vw;
+  background-color: var(--color-white);
+  opacity: 0.7;
+  margin-bottom: 4vw;
+  transition: opacity 200ms ease-in;
+}
+
+.review-item:hover,
+:active {
+  opacity: 1;
+}
+
+.review-item a {
+  display: block;
+}
+
+.name-group {
+  margin-bottom: 2.267vw;
+}
+
+.name-group span {
+  display: inline-block;
+  color: var(--color-tertiary);
+  font-size: 3.2vw;
+}
+
+.car-name {
+  margin-right: 3.2vw;
+}
+
+.review-item-title {
+  height: 13.867vw;
+  font-size: 4.8vw;
+  line-height: 6.933vw;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 2vw;
+}
+
+.review-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 3.46667vw;
+  color: var(--color-secondary);
+  line-height: 6.13333vw;
+  height: 12.26667vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.review-more {
+  position: relative;
+}
+
+.review-more-button {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  font-size: 4vw;
+  font-weight: 500;
+}
+
+.review-more-button i {
+  color: #004eff;
+}
+
 /*------------ tablet ------------*/
 
 @media screen and (min-width: 750px) {
@@ -492,6 +698,10 @@ address {
 
   .sm-only {
     display: none;
+  }
+
+  .sm-hidden {
+    display: block;
   }
 
   .event-item h3 br {
@@ -674,6 +884,154 @@ address {
     height: 10px;
     margin-right: 8px;
   }
+
+  /* Trust */
+  .trust {
+    padding: 160px 0;
+  }
+
+  .section-title {
+    font-size: var(--font-large);
+    margin-bottom: 30px;
+  }
+
+  .section-sub {
+    font-size: 1.25rem;
+  }
+
+  .section-title::after {
+    left: 8px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .trust-more {
+    width: 60px;
+    height: 60px;
+  }
+
+  .trust-more i {
+    font-size: 42px;
+  }
+
+  .trust-list {
+    margin-top: 52px;
+  }
+
+  .trust-item {
+    padding: 62px 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .trust-item:last-child {
+    border-right: none;
+  }
+
+  .trust-item .image-container {
+    margin-bottom: 85px;
+  }
+
+  .trust-item .image-container img {
+    width: auto;
+  }
+
+  .trust-item h3 {
+    font-size: var(--font-medium);
+    line-height: 1;
+    margin-bottom: 30px;
+  }
+
+  .trust-item h3 br {
+    display: none;
+  }
+
+  .trust-desc {
+    font-size: var(--font-regular);
+    text-align: center;
+    line-height: 30px;
+  }
+
+  /* Review */
+  .review {
+    position: relative;
+    padding: 160px 0;
+  }
+
+  .review-list {
+    position: relative;
+    padding: 56px 0;
+    min-height: 1580px;
+    z-index: 100;
+  }
+
+  .review-item {
+    width: 552px;
+    height: 280px;
+    padding: 48px;
+    border-radius: 15px;
+    margin-bottom: 36px;
+  }
+
+  .review-item:nth-child(2n - 1) {
+    float: left;
+  }
+
+  .review-item:nth-child(2n) {
+    float: right;
+  }
+
+  .name-group {
+    margin-bottom: 20px;
+  }
+
+  .name-group span {
+    font-size: var(--font-small);
+  }
+
+  .car-name {
+    margin-right: 11px;
+  }
+
+  .review-item-title {
+    height: auto;
+    font-size: var(--font-medium);
+    line-height: 24px;
+    margin-bottom: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .review-content {
+    font-size: var(--font-regular);
+    line-height: 30px;
+    height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .review-more-button {
+    right: 0;
+    font-size: var(--font-regular);
+  }
+
+  .background-txt {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    pointer-events: none;
+  }
+
+  .background-txt li {
+    font-size: 124px;
+    line-height: 1;
+    color: #002d72;
+    opacity: 0.08;
+    font-weight: 300;
+    text-align: right;
+    margin-bottom: 70px;
+    user-select: none;
+  }
 }
 
 /*------------ desktop ------------*/
@@ -720,5 +1078,13 @@ address {
   .search-box {
     width: 552px;
     margin-right: 36px;
+  }
+
+  .review-list {
+    min-height: 950px;
+  }
+
+  .review-item:nth-child(2) {
+    margin-top: 140px;
   }
 }
