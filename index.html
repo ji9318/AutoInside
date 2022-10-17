@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>오토인사이드 - Move Beyond The used car</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -65,9 +72,13 @@
       <div class="header-button-group">
         <div class="lg-only">
           <a href="/">EVENT</a>
-          <a href="/">LOGIN</a>
+          <a href="login.html">LOGIN</a>
         </div>
-        <button type="button" aria-label="메뉴 열기 버튼">
+        <button
+          class="sidebar-button"
+          type="button"
+          aria-label="메뉴 열기 버튼"
+        >
           <i class="bi bi-list"></i>
         </button>
       </div>
@@ -87,33 +98,42 @@
                 </button>
                 <button class="tab-button is-sell" type="button">팔아줘</button>
               </div>
-              <div class="find-box is-active">
-                <h2 class="find-title">어떤 차를 찾으세요?</h2>
+              <div class="find-box is-show">
+                <h2 class="find-title search-title">어떤 차를 찾으세요?</h2>
                 <form class="find-form" action="/" method="POST">
                   <div class="select-group">
                     <div class="form-select">
-                      <select id="select-1">
-                        <option value="">제조사</option>
-                        <option value="1">제조사</option>
+                      <select onchange="categoryChange(this)" id="company">
+                        <option>제조사</option>
+                        <option value="hyun">현대</option>
+                        <option value="kia">기아</option>
+                        <option value="chev">쉐보레</option>
+                        <option value="ssang">쌍용</option>
+                        <option value="ren">르노삼성</option>
+                        <option value="bmw">BMW</option>
+                        <option value="gene">제네시스</option>
+                        <option value="jeep">지프</option>
+                        <option value="mini">미니</option>
+                        <option value="benz">벤츠</option>
+                        <option value="audi">아우디</option>
                       </select>
                       <i class="bi bi-caret-down-fill"></i>
                     </div>
                     <div class="form-select">
-                      <select id="select-2">
-                        <option value="">브랜드</option>
-                        <option value="1">브랜드</option>
+                      <select id="brand">
+                        <option>브랜드</option>
                       </select>
                       <i class="bi bi-caret-down-fill"></i>
                     </div>
                   </div>
-                  <button class="find-button" type="submit">검색</button>
+                  <button class="search-button" type="submit">검색</button>
                 </form>
               </div>
               <div class="sell-box">
-                <h2 class="sell-title">차량번호를 입력하세요</h2>
+                <h2 class="sell-title search-title">차량번호를 입력하세요</h2>
                 <form class="sell-form" action="">
-                  <input type="text" />
-                  <button class="sell-button" type="submit">신청</button>
+                  <input type="text" placeholder="차량번호를 입력" />
+                  <button class="search-button" type="submit">신청</button>
                 </form>
               </div>
             </div>
@@ -181,7 +201,10 @@
                   달달~하게 다 드려요
                 </h3>
                 <p>신한 마이카 고객 대상</p>
-                <img src="assets/img_main_ban02_pc.png" alt="" />
+                <img
+                  src="assets/img_main_ban02_pc.png"
+                  alt="최대 10만원 캐시백 5만원 + 주유권 5만원"
+                />
               </a>
             </div>
           </div>
@@ -194,7 +217,7 @@
             <p class="section-sub">
               소중한 내 차니까, 든든하게 보장 서비스 챙기세요
             </p>
-            <a class="trust-more" href="/">
+            <a class="trust-more" href="/" aria-label="더보기 버튼">
               <i class="bi bi-plus-lg"></i>
             </a>
           </div>
@@ -349,7 +372,7 @@
               src="./assets/img_main_mv03_pc.png"
               alt=""
             />
-            <button class="play-button">
+            <button class="play-button" aria-label="재생 버튼">
               <img src="./assets/img_playBtn_pc.png" alt="play-button" />
             </button>
           </div>
@@ -360,7 +383,7 @@
               src="./assets/img_main_mv01_pc.png"
               alt=""
             />
-            <button class="play-button">
+            <button class="play-button" aria-label="재생 버튼">
               <img src="./assets/img_playBtn_pc.png" alt="play-button" />
             </button>
           </div>
@@ -371,7 +394,7 @@
               src="./assets/img_main_mv02_pc.png"
               alt=""
             />
-            <button class="play-button">
+            <button class="play-button" aria-label="재생 버튼">
               <img src="./assets/img_playBtn_pc.png" alt="play-button" />
             </button>
           </div>
@@ -459,72 +482,72 @@
                 <img
                   class="sm-hidden"
                   src="./assets/img_main_ptn01_pc.png"
-                  alt=""
+                  alt="현대"
                 />
                 <img
                   class="sm-only"
                   src="./assets/img_main_ptn01_mo.png"
-                  alt=""
+                  alt="현대"
                 />
               </li>
               <li class="partner-item">
                 <img
                   class="sm-hidden"
                   src="./assets/img_main_ptn02_pc.png"
-                  alt=""
+                  alt="기아"
                 />
                 <img
                   class="sm-only"
                   src="./assets/img_main_ptn02_mo.png"
-                  alt=""
+                  alt="기아"
                 />
               </li>
               <li class="partner-item">
                 <img
                   class="sm-hidden"
                   src="./assets/img_main_ptn03_pc.png"
-                  alt=""
+                  alt="현대캐피탈"
                 />
                 <img
                   class="sm-only"
                   src="./assets/img_main_ptn03_mo.png"
-                  alt=""
+                  alt="현대캐피탈"
                 />
               </li>
               <li class="partner-item">
                 <img
                   class="sm-hidden"
                   src="./assets/img_main_ptn04_pc.png"
-                  alt=""
+                  alt="티맵"
                 />
                 <img
                   class="sm-only"
                   src="./assets/img_main_ptn04_mo.png"
-                  alt=""
+                  alt="티맵"
                 />
               </li>
               <li class="partner-item">
                 <img
                   class="sm-hidden"
                   src="./assets/img_main_ptn05_pc.png"
-                  alt=""
+                  alt="신한캐피탈"
                 />
                 <img
                   class="sm-only"
                   src="./assets/img_main_ptn05_mo.png"
-                  alt=""
+                  alt="신한캐피탈"
                 />
               </li>
               <li class="partner-item">
                 <img
                   class="sm-hidden"
                   src="./assets/img_main_ptn06_pc.png"
-                  alt=""
+                  alt="신한카드"
                 />
                 <img
                   class="sm-only"
                   src="./assets/img_main_ptn06_mo.png"
-                  alt=""
+                  alt="신한카드"
                 />
               </li>
             </ul>
@@ -598,20 +621,175 @@
             <span class="time">평일 09:00~17:20 / 토, 일, 공휴일 휴무</span>
           </div>
           <div class="certification">
-            <img class="lg-only" src="./assets/img_certify_pc.png" alt="" />
-            <img class="lg-hidden" src="./assets/img_certify_mo.png" alt="" />
+            <img class="lg-only" src="./assets/img_certify_pc.png" alt="인증" />
+            <img
+              class="lg-hidden"
+              src="./assets/img_certify_mo.png"
+              alt="인증"
+            />
           </div>
         </div>
       </div>
 
       <div class="patent">
         <span>
-          <img class="sm-hidden" src="./assets/img_patent_pc.png" alt="" />
-          <img class="sm-only" src="./assets/img_patent_mo.png" alt="" />
+          <img
+            class="sm-hidden"
+            src="./assets/img_patent_pc.png"
+            alt="특허청 - 다양한 거래 방법을 제공하는 중고차 거래 중개 시스템 및 방법 특허취득"
+          />
+          <img
+            class="sm-only"
+            src="./assets/img_patent_mo.png"
+            alt="특허청 - 다양한 거래 방법을 제공하는 중고차 거래 중개 시스템 및 방법 특허취득"
+          />
         </span>
       </div>
     </footer>
+    <aside class="sm-sidebar sidebar sm-only">
+      <header>
+        <a class="login" href="/login.html">
+          <i class="bi bi-person"></i>
+          <span>로그인</span>
+        </a>
+        <div class="sidebar-icon">
+          <a href="/">
+            <i class="bi bi-house"></i>
+          </a>
+          <button class="sidebar-exit-button">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+      </header>
+      <nav>
+        <div class="side-left">
+          <div class="menu-nav-button-wrap">
+            <button class="menu-nav-button is-active" data-link="#buy">
+              내차사기
+            </button>
+            <button class="menu-nav-button" data-link="#sell">내차팔기</button>
+            <button class="menu-nav-button" data-link="#review">
+              고객후기
+            </button>
+            <button class="menu-nav-button" data-link="#archive">
+              아카이브
+            </button>
+            <button class="menu-nav-button" data-link="#contact">
+              고객센터
+            </button>
+          </div>
+          <div class="etc-link">
+            <a href="/">이벤트</a>
+            <a href="/">온라인<br />경쟁입찰</a>
+          </div>
+        </div>
+        <div class="side-right">
+          <div class="side-menu-wrap" id="buy">
+            <div class="side-menu-title">내차사기</div>
+            <ul class="side-menu-list">
+              <li class="side-menu-item"><a href="/">내차검색</a></li>
+              <li class="side-menu-item"><a href="/">보증서비스</a></li>
+            </ul>
+          </div>
+
+          <div class="side-menu-wrap" id="sell">
+            <div class="side-menu-title">내차팔기</div>
+            <ul class="side-menu-list">
+              <li class="side-menu-item"><a href="/">간편신청</a></li>
+              <li class="side-menu-item"><a href="/">나의 신청현황</a></li>
+              <li class="side-menu-item"><a href="/">최고경쟁차량</a></li>
+              <li class="side-menu-item"><a href="/">법인차매각</a></li>
+            </ul>
+          </div>
+
+          <div class="side-menu-wrap" id="review">
+            <div class="side-menu-title">고객후기</div>
+            <ul class="side-menu-list">
+              <li class="side-menu-item">
+                <a href="/">내차팔기 고객후기</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="side-menu-wrap" id="archive">
+            <div class="side-menu-title">아카이브</div>
+            <ul class="side-menu-list">
+              <li class="side-menu-item"><a href="/">아카이브</a></li>
+            </ul>
+          </div>
+
+          <div class="side-menu-wrap" id="contact">
+            <div class="side-menu-title">고객센터</div>
+            <ul class="side-menu-list">
+              <li class="side-menu-item"><a href="/">공지사항</a></li>
+              <li class="side-menu-item"><a href="/">FAQ</a></li>
+              <li class="side-menu-item"><a href="/">1:1 문의</a></li>
+              <li class="side-menu-item"><a href="/">낙찰시세</a></li>
+              <li class="side-menu-item"><a href="/">자료실</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    <aside class="md-sidebar sidebar sm-hidden">
+      <button class="md-sidebar-exit-button">
+        <i class="bi bi-x-lg"></i>
+      </button>
+      <nav>
+        <ul class="md-sidebar-list">
+          <li class="md-sidebar-title">내차사기</li>
+          <li class="md-sidebar-item"><a href="/">내차검색</a></li>
+          <li class="md-sidebar-item"><a href="/">보증서비스</a></li>
+        </ul>
+        <ul class="md-sidebar-list">
+          <li class="md-sidebar-title">내차팔기</li>
+          <li class="md-sidebar-item"><a href="/">간편신청</a></li>
+          <li class="md-sidebar-item"><a href="/">신청현황</a></li>
+          <li class="md-sidebar-item"><a href="/">최고경쟁차량</a></li>
+          <li class="md-sidebar-item"><a href="/">법인차매각</a></li>
+        </ul>
+        <ul class="md-sidebar-list">
+          <li class="md-sidebar-title">아카이브</li>
+          <li class="md-sidebar-item"><a href="/">아카이브</a></li>
+        </ul>
+        <ul class="md-sidebar-list">
+          <li class="md-sidebar-title">고객후기</li>
+          <li class="md-sidebar-item"><a href="/">내차팔기 고객후기</a></li>
+        </ul>
+        <ul class="md-sidebar-list">
+          <li class="md-sidebar-title">고객지원</li>
+          <li class="md-sidebar-item"><a href="/">공지사항</a></li>
+          <li class="md-sidebar-item"><a href="/">1:1문의</a></li>
+          <li class="md-sidebar-item"><a href="/">FAQ</a></li>
+          <li class="md-sidebar-item"><a href="/">낙찰시세</a></li>
+          <li class="md-sidebar-item"><a href="/">자료실</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <aside class="bottom-menu sm-only">
+      <ul class="bottom-menu-list">
+        <li class="bottom-menu-item">
+          <a href="/">
+            <img src="./assets/img_moFixed_btn01.png" alt="" />
+            <span>내차사기</span>
+          </a>
+        </li>
+        <li class="bottom-menu-item">
+          <a href="/">
+            <img src="./assets/img_moFixed_btn02.png" alt="" />
+            <span>내차팔기</span>
+          </a>
+        </li>
+        <li class="bottom-menu-item">
+          <a href="/">
+            <img src="./assets/img_moFixed_btn03.png" alt="" />
+            <span>고객후기</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="./tiny-slider.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>
