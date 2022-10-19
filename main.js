@@ -81,25 +81,25 @@ sellTabButton.addEventListener("click", () => {
 
 // Global header
 const globalheader = document.querySelector(".global-header");
-addEventListener("wheel", (e) => {
-  const direction =
-    e.deltaY < 0
-      ? globalheader.classList.add("is-transparent")
-      : globalheader.classList.remove("is-transparent");
-});
-
+const headerHeight = globalheader.getBoundingClientRect().height;
 // Bottom menu
 const bottomMenu = document.querySelector(".bottom-menu");
-
-addEventListener("wheel", (e) => {
+let lastScrollY = 0;
+addEventListener("scroll", (e) => {
+  const scrollY = window.scrollY;
   const direction =
-    e.deltaY > 0
-      ? bottomMenu.classList.add("is-hidden")
-      : bottomMenu.classList.remove("is-hidden");
+    scrollY > lastScrollY
+      ? (bottomMenu.classList.add("is-hidden"),
+        globalheader.classList.remove("is-transparent"))
+      : (bottomMenu.classList.remove("is-hidden"),
+        window.scrollY > 0
+          ? globalheader.classList.add("is-transparent")
+          : globalheader.classList.remove("is-transparent"));
+
+  lastScrollY = scrollY;
 });
 
 // Select box
-
 function categoryChange(e) {
   const hyun = [
     "그랜저",
